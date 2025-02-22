@@ -1,4 +1,3 @@
-## AI Assistant
 # Coffee Machine Program
 
 This project is a simple simulation of a coffee machine built using Python. The coffee machine provides functionality to serve three types of coffee—**Espresso**, **Latte**, and **Cappuccino**—and interact with users to take orders, process payments, and track machine resources like water, milk, and coffee.
