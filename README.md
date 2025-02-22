@@ -24,7 +24,6 @@ This project is a simple simulation of a coffee machine built using Python. The 
 2. **Resource Tracking**: Tracks the availability of required ingredients (water, milk, coffee) and ensures sufficient resources before fulfilling an order.
 3. **Payment Processing**: Handles coin-based payment, calculates total, checks for sufficient funds, provides change if necessary, and adds collected money to the machine's bank.
 4. **Three Drink Recipes**: The machine can prepare Espresso, Latte, or Cappuccino, using predefined recipes and costs.
-
 ---
 
 ## How It Works
@@ -118,7 +117,7 @@ The program contains several TODO comments, indicating planned improvements or a
 2. **Implement a Persistent Bank**: Allow the machine’s bank balance to persist across runs.
 3. **Optimize Resource Deduction and Refill**: Include features for refilling resources manually.
 4. **Enhance User Interface**: Implement a graphical or web-based interface for more user-friendly operation.
-
+5. **Refills Resources**:  Implement a method to restore/update resources
 ---
 
 ## How to Run

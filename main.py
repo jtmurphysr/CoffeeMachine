@@ -28,11 +28,10 @@ resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
+    "money": 0
 }
-# TODO: 1 Print Prompt at startup
-print("Welcome to the Coffee Machine")
 
-#TODO: 6 Provide user menu:  Turn Off, Resource Report, Order Drink
+print("Welcome to the Coffee Machine")
 
 def coffee_machine():
         print("What would you like?")
@@ -49,20 +48,17 @@ def coffee_machine():
         elif choice == "3":
             return take_order()
         elif choice == "4":
+            print("Goodbye!")
             return False
 
-# TODO: 2 Turn Machine off
-
-# TODO: 3 Print Resource Report
 def print_report():
     print(f"Water: {resources['water']}ml")
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
     print("--------------------------------")
-    print("Money: $0.00")
+    print(f"Money: {resources['money']}")
     print("--------------------------------")
 
-# TODO: 4 Take order, confirm resources are sufficient against recipe in menu
 def take_order():
     order = input("What would you like? (espresso/latte/cappuccino): ")
     if order == "off":
@@ -81,15 +77,12 @@ def take_order():
                 return True
             else:
                 #print cost of drink
-                print(f"Price for selected {drink} is: ${drink['cost']}.")
+                print(f"Price for selected {order} is: ${drink['cost']}.")
                 if process_payment(drink['cost']):
                     resources[item] -= drink["ingredients"][item]
                     print(f"Here is your {order}, enjoy!")
                     print("\n" * 10)
                     return True
-
-
-# TODO: 5 Process coins, determine payment sufficiency, refund if insufficient, give change if excess, add to bank
 
 def process_payment(price):
     print("Please insert coins.")
@@ -104,13 +97,21 @@ def process_payment(price):
         return False
     elif total > price:
         print(f"Here is ${total - price} in change.")
+        resources['money'] += price
         return True
     else:
         print(f"Thank you for your payment.")
+        resources['money'] += price
         return True
 
+#TODO: Add resources
+
+def add_resources():
+    pass
 
 while True:
-    coffee_machine()
+    result = coffee_machine()
+    if not result:
+        break
 
 
